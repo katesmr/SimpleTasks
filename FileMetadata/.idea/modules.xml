@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/String operations.iml" filepath="$PROJECT_DIR$/.idea/String operations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FileMetadata/.idea/FileMetadata.iml" filepath="$PROJECT_DIR$/../FileMetadata/.idea/FileMetadata.iml" />
     </modules>
   </component>
 </project>
