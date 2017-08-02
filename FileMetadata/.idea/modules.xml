@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../FileMetadata/.idea/FileMetadata.iml" filepath="$PROJECT_DIR$/../FileMetadata/.idea/FileMetadata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FileMetadata.iml" filepath="$PROJECT_DIR$/.idea/FileMetadata.iml" />
     </modules>
   </component>
 </project>

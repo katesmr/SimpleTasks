@@ -30,7 +30,7 @@ def create_color_list(rgb_list):
 
 
 im = Image.open('/home/kate/Pictures/Untitled.png')
-# colors = img.convert('RGB', colors=5).getcolors()
+colors = im.convert('RGB').getcolors()
 width, height = im.size
 pix_val = list(im.getdata())
 
@@ -43,9 +43,17 @@ print(create_hex_color_list(create_rgb_list(im)))
 rgb = [(255, 0, 0), (255, 255, 255), (0, 0, 0)]
 print(create_color_list(rgb))
 
-"""
-px=ImageGrab.grab().load()
-for y in range(0,100,10):
-    for x in range(0,100,10):
-        color=px[x,y]
-"""
+
+def sss(arr):
+    length = len(arr)
+    for i in range(1, length):
+        el = arr[i]
+        j = i
+        while j > 0 and arr[j-1][0] < el[0]:
+            arr[j] = arr[j-1]
+            j -= 1
+        arr[j] = el
+
+print(sss(lest))
+print(lest)
+

@@ -36,6 +36,18 @@ class BaseFile:
         file_type = magic_object.id_filename(self.__file_path)
         return file_type
 
+    def get_owner(self):
+        """
+        :return: tuple - owner name with user id
+        """
+        try:
+            import pwd  # UNIX platform
+        except ImportError:
+            import winpwd as pwd  # Windows
+        finally:
+            result = pwd.getpwuid(self.__file_stat.st_uid)
+            return result[0], result[2]
+
     def get_name(self):
         """
         :return: str - file name
