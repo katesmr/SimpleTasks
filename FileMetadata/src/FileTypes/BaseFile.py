@@ -1,8 +1,3 @@
-import os
-import sys
-PACKAGE_PARENT = '..'
-SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
-sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 from src.core.FileInfo import FileInfo
 from src.core.file_type import file_type
 from src.core.file_name import file_name
@@ -11,7 +6,6 @@ from src.core.file_owner import file_owner
 from src.core.file_permission import file_permission
 from src.core.file_modification_date import file_modification_date
 from src.core.file_creation_date import file_creation_date
-# from src.base.Windows.file_owner_win import file_owner_win
 
 
 class BaseFile:
@@ -34,12 +28,7 @@ class BaseFile:
         """
         :return: tuple - owner name with user id
         """
-        if os.name == "posix":
-            result = file_owner(self.file_object)
-        else:
-            pass
-            # result = file_owner_win(self.file_object.file, self.file_object.file_path)
-        return result
+        return file_owner(self.file_object)
 
     def get_name(self):
         """
@@ -76,12 +65,3 @@ class BaseFile:
         :return: list - lit of files with equals content
         """
         pass
-
-f = BaseFile("/home/kate/Documents/пароли.txt")
-print(f.get_type())
-print(f.get_permission())
-print(f.get_creation_date())
-print(f.get_modification_date())
-print(f.get_size())
-print(f.get_owner())
-print(f.get_name())

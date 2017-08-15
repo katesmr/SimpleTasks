@@ -1,11 +1,12 @@
 from PIL import Image
+
 from src.FileTypes.BaseFile import BaseFile
-from src.core.image_comment import image_comment
-from src.core.image_exif_data import image_exif_data
 from src.core.image_color_list import image_color_list
+from src.core.image_comment import image_comment
 from src.core.image_description import image_description
+from src.core.image_exif_data import image_exif_data
 from src.core.image_most_commonly_color import image_most_commonly_color
-from src.core.base.repeatable_images_searcher import find_repeatable_images
+from src.core.repeatable_images_searcher import find_repeatable_images
 
 
 class ImageFile(BaseFile):
@@ -68,12 +69,3 @@ class ImageFile(BaseFile):
         :return: str - description text
         """
         return image_comment(self.image)
-
-
-i = ImageFile('/home/kate/Pictures/Untitled.png')
-print(i.get_permission())
-print(i.get_most_commonly_color())
-print(i.get_description())
-print(i.get_comment())
-print(i.get_color_list())
-print(i.get_repeatable_files("/home/kate/Pictures/"))
